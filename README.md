@@ -528,7 +528,6 @@ matplotlib
 seaborn
 scikit-learn
 openpyxl
-xlrd
 shap
 joblib
 ```
