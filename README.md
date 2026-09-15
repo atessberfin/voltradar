@@ -456,15 +456,30 @@ voltradar/
 |-- notebooks/
 |   `-- VoltRadar_Masters_Thesis.ipynb
 |
-`-- data/
+|-- data/
+|   `-- README.md
+|
+|-- models/
+|   `-- README.md
+|
+|-- outputs/
+|   `-- README.md
+|
+`-- app/
     `-- README.md
 ```
 
 The `notebooks` folder contains the complete analytical workflow used for the dissertation.
 
-The `data` folder contains documentation about the data sources and data-availability restrictions. Raw Trade Map and Global Trade Alert datasets are not stored in the repository.
+The `data` folder documents the project data sources and data-availability restrictions.
 
-Additional folders for the prototype, exported models and generated outputs may be added as the project progresses.
+The `models` folder documents the exported production model and model artefact policy.
+
+The `outputs` folder documents the generated 2026 market-assessment outputs.
+
+The `app` folder is reserved for the planned interactive VoltRadar prototype.
+
+Raw datasets, exported model artefacts and generated output files are not stored in the repository.
 
 ## 21. Notebook Structure
 
