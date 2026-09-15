@@ -216,3 +216,27 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ---------------------------------------
+# VoltRadar project-specific exclusions
+# ---------------------------------------
+
+# Raw and licensed datasets
+data/*
+!data/README.md
+
+# Exported machine-learning models
+models/*.joblib
+models/*.pkl
+
+# Generated analysis outputs
+outputs/*
+!outputs/README.md
+
+# Local operating-system files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
