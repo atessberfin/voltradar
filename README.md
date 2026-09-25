@@ -61,9 +61,9 @@ The policy data are transformed into country-year indicators including:
 - Active Green Interventions
 - Active Amber Interventions
 
-The original raw datasets are not included in this repository due to potential licensing, access and redistribution restrictions.
+The original raw datasets are not redistributed through this repository. Their original sources and the procedures used for data preparation are documented separately to support transparency and reproducibility.
 
-Further details are available in [`data/README.md`](data/README.md).
+Further details are available in [`data/README.md`](https://github.com/atessberfin/voltradar/blob/main/data/README.md).
 
 ## 6. Data Preparation
 
@@ -131,9 +131,9 @@ The candidate algorithms included:
 - Random Forest
 - Gradient Boosting
 
-Random Forest provided the strongest overall validation performance and was selected for the final modelling stage.
+Initial validation results showed the strongest performance from Linear Regression before hyperparameter tuning. Random Forest and Gradient Boosting were subsequently tuned using the training and validation data. Following hyperparameter tuning and the final validation assessment, Random Forest was selected as the forecasting algorithm used for both Model 1 and Model 2.
 
-Hyperparameter tuning was then performed for the Random Forest model.
+Using the same forecasting algorithm for both model specifications allows the incremental contribution of policy information to be evaluated without introducing differences caused by the modelling method itself.
 
 ### Baseline
 
@@ -149,7 +149,7 @@ Its purpose is to evaluate whether country-level import behaviour contains enoug
 
 Model 2 uses the same Random Forest structure and the same trade-related features as Model 1, but adds Global Trade Alert policy variables.
 
-Using the same algorithm for both models makes it possible to evaluate the incremental contribution of policy information without introducing differences caused by the modelling method itself.
+Using the same algorithm and tuned configuration for both models makes it possible to evaluate the incremental contribution of policy information consistently.
 
 Model 2 is retained as an experimental comparison, while Model 1 is used as the final production forecasting model.
 
@@ -463,23 +463,12 @@ voltradar/
 |   `-- README.md
 |
 |-- outputs/
-|   `-- README.md
+|   |-- README.md
+|   |-- voltradar_2026_market_assessment.csv
+|   `-- voltradar_appendix_c_2026_market_assessment.xlsx
 |
 `-- app/
     `-- README.md
-```
-
-The `notebooks` folder contains the complete analytical workflow used for the dissertation.
-
-The `data` folder documents the project data sources and data-availability restrictions.
-
-The `models` folder documents the exported production model and model artefact policy.
-
-The `outputs` folder documents the generated 2026 market-assessment outputs.
-
-The `app` folder is reserved for the planned interactive VoltRadar prototype.
-
-Raw datasets, exported model artefacts and generated output files are not stored in the repository.
 
 ## 21. Notebook Structure
 
@@ -538,19 +527,26 @@ Because the original Trade Map and Global Trade Alert datasets are not distribut
 
 ## 23. Model and Output Export
 
-The final production model can be exported for reuse outside the notebook.
+The final production workflow includes export functionality for reuse outside the notebook environment.
 
 The export stage includes:
 
 - the trained Trade-Only Random Forest model
 - the corresponding production feature list
-- the final 2026 market-assessment dataset
+- the final 2026 country-level market-assessment dataset
 
-The model is saved using `joblib`, while the structured market-assessment output is exported as a CSV file.
+The model is exported using `joblib`, while the structured market-assessment results are generated in machine-readable and dissertation-oriented formats.
+
+The repository contains the final 2026 market-assessment outputs:
+
+- `outputs/voltradar_2026_market_assessment.csv`
+- `outputs/voltradar_appendix_c_2026_market_assessment.xlsx`
+
+The CSV file preserves the complete machine-readable production output, including country-level prediction explanations. The Excel file provides the formatted country-level output prepared to support Appendix C of the dissertation.
 
 The notebook also includes a reload check to confirm that the exported model can be loaded successfully with the expected feature configuration.
 
-Generated model and output files are currently kept outside the GitHub repository until licensing, redistribution and prototype requirements are finalised.
+Exported model artefacts are documented but are not currently distributed through the repository.
 
 ## 24. Prediction Function
 
@@ -615,7 +611,7 @@ Potential developments include:
 - additional macroeconomic indicators
 - country-level uncertainty estimates
 - broader HS product coverage
-- interactive historical trend visualisations
+- interactive historical trend visualizations
 - downloadable country-level market reports
 - automated model retraining when new trade data become available
 
@@ -623,7 +619,7 @@ The current framework therefore provides a foundation that can be extended from 
 
 ## 28. Current Status
 
-The core machine-learning pipeline is complete.
+The master's dissertation and the core VoltRadar machine-learning implementation are complete.
 
 Completed work includes:
 
@@ -648,10 +644,12 @@ Completed work includes:
 - final production-model selection
 - model and data export logic
 - reusable country-level prediction function
+- final dissertation documentation
+- reproducibility documentation and repository outputs
 
-The next project stages are:
+The immediate remaining academic stage is the viva presentation.
 
-**written dissertation → prototype development → viva presentation**
+An interactive prototype remains a potential future extension of VoltRadar rather than part of the completed dissertation implementation.
 
 ## 29. Academic Context
 
