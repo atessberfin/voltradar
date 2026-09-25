@@ -1,10 +1,12 @@
 # App
 
-This folder is reserved for the interactive VoltRadar prototype.
+This folder is reserved for a potential future interactive VoltRadar prototype.
 
-The planned application will provide a simple country-level interface for exploring the final forecasting and decision-support framework without requiring direct interaction with the analysis notebook.
+No interactive application was developed as part of the completed dissertation implementation.
 
-The prototype is expected to allow users to:
+The current VoltRadar project consists of the forecasting, evaluation, interpretation and market-assessment workflow contained in the main analysis notebook.
+
+A future application could provide a country-level interface allowing users to:
 
 - select a country
 - view the latest available import value
@@ -16,8 +18,8 @@ The prototype is expected to allow users to:
 - view the market opportunity category
 - read a short prediction explanation
 
-The application will use the final **Trade-Only Random Forest** as the forecasting engine and apply the Global Trade Alert policy layer separately.
+Any future prototype would use the final Trade-Only Random Forest as the forecasting engine and apply the Global Trade Alert policy-assessment layer separately.
 
-A Streamlit-based implementation is planned for the prototype stage because it can integrate directly with the Python model and prediction workflow developed in the main notebook.
+A lightweight web interface, such as Streamlit, could be considered in future development because it can integrate directly with the Python workflow implemented in the main notebook.
 
-The application code will be added after the core dissertation modelling workflow and repository structure are finalised.
+This folder currently contains documentation only and does not contain a deployed or completed application.
