@@ -221,17 +221,19 @@ __marimo__/
 # VoltRadar project-specific exclusions
 # ---------------------------------------
 
-# Raw and licensed datasets
+# Raw source datasets
 data/*
 !data/README.md
 
-# Exported machine-learning models
+# Exported machine-learning model artefacts
 models/*.joblib
 models/*.pkl
 
-# Generated analysis outputs
+# Generated outputs
 outputs/*
 !outputs/README.md
+!outputs/voltradar_2026_market_assessment.csv
+!outputs/voltradar_appendix_c_2026_market_assessment.xlsx
 
 # Local operating-system files
 .DS_Store
